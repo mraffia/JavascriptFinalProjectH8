@@ -25,6 +25,8 @@
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -107,7 +109,11 @@
                            <strong class="yellow_bold">Product </strong></h1>
                         <p>It is a long established fact that a r <br>
                           eader will be distracted by the readable content of a page </p>
-                        <a  href="#">see more Products</a>
+                        <!-- <a  href="#">see more Products</a> -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                           Open modal
+                         </button>
                      </div>
                   </div>
                </div>
@@ -119,7 +125,10 @@
                            <strong class="yellow_bold">Product </strong></h1>
                         <p>It is a long established fact that a r <br>
                           eader will be distracted by the readable content of a page </p>
-                        <a  href="#">see more Products</a>
+                        <!-- <a  href="#">see more Products</a> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                           Open modal
+                         </button>
                      </div>
                   </div>
                </div>
@@ -131,11 +140,13 @@
                            <strong class="yellow_bold">Product </strong></h1>
                         <p>It is a long established fact that a r <br>
                           eader will be distracted by the readable content of a page </p>
-                        <a  href="#">see more Products</a>
+                        <!-- <a  href="#">see more Products</a> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                           Open modal
+                         </button>
                      </div>
                   </div>
                </div>
-
             </div>
             <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
             <i class='fa fa-angle-right'></i>
@@ -148,12 +159,78 @@
 
       </section>
 
-
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+         <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+               <h4 class="modal-title" style="color: black;">Modal Popup</h4>
+               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+               <table width="100%" cellspacing="0" class="compare_plan">
+                  <thead>
+                        <tr>
+                          <th class="plans-list"><h3>Plan Features</h3></th>
+                          <th class="plans-list"><h3>Basic</h3><h4>$5<small>/month</small></h4></th>
+                          <th class="plans-list"><h3>Economy</h3><h4>$9<small>/month</small></h4></th>
+                      </tr>
+                  </thead>				
+                     <tbody>
+                        <tr>
+                          <td class="plan_list_title">Web Space</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                      <tr>
+                          <td class="plan_list_title">Bandwidth</td>
+                        <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                      <tr>
+                          <td class="plan_list_title">25 GB Storage</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                     </tr>
+                      <tr>
+                          <td class="plan_list_title">iPhone App</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                      <tr>
+                          <td class="plan_list_title">Enhanced Security</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                      <tr>
+                          <td class="plan_list_title">E-mail</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                      <tr>
+                          <td class="plan_list_title">Wordpress Support</td>
+                          <td class="price_body">Unlimited</td>
+                          <td class="price_body">Unlimited</td>
+                      </tr>
+                  </tbody></table>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+      
+         </div>
+         </div>
+      </div>
 
 <!-- CHOOSE  -->
       <div class="whyschose">
          <div class="container">
-
             <div class="row">
                <div class="col-md-7 offset-md-3">
                   <div class="title">
