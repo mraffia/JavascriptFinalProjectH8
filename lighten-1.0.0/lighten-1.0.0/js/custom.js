@@ -372,6 +372,15 @@ $(function () {
 
 /* Todo list
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+for (var i = 0; i < localStorage.length; i++) {
+	var li = document.createElement("li");
+	var inputValue = localStorage.key(i);
+	var t = document.createTextNode(inputValue);
+
+	li.appendChild(t);
+	document.getElementById("todo_list").appendChild(li);
+}
+
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -389,6 +398,7 @@ var i;
 for (i = 0; i < close.length; i++) {
 	close[i].onclick = function() {
 		var div = this.parentElement;
+		localStorage.removeItem(div.innerHTML.split('<')[0]);
 		div.style.display = "none";
 	}
 }
@@ -406,6 +416,9 @@ function newElement() {
 	var li = document.createElement("li");
 	var inputValue = document.getElementById("todo").value;
 	var t = document.createTextNode(inputValue);
+	
+	localStorage.setItem(inputValue, 0);
+	
 	li.appendChild(t);
 	if (inputValue === '') {
 		alert("You must write something!");
@@ -423,6 +436,7 @@ function newElement() {
 	for (i = 0; i < close.length; i++) {
 		close[i].onclick = function() {
 			var div = this.parentElement;
+			localStorage.removeItem(div.innerHTML.split('<')[0]);
 			div.style.display = "none";
 		}
 	}
