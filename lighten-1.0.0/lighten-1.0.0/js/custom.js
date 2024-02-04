@@ -368,5 +368,84 @@ $(function () {
 		interval: 5000
 	});
 
-
 });
+
+/* Todo list
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+for (var i = 0; i < localStorage.length; i++) {
+	var li = document.createElement("li");
+	var inputValue = localStorage.key(i);
+	var t = document.createTextNode(inputValue);
+
+	li.appendChild(t);
+	if (localStorage.getItem(inputValue) === "1") {
+		li.classList.toggle('checked');
+	}
+
+	document.getElementById("todo_list").appendChild(li);
+}
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+	var span = document.createElement("SPAN");
+	var txt = document.createTextNode("\u00D7");
+	span.className = "close";
+	span.appendChild(txt);
+	myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+	close[i].onclick = function() {
+		var div = this.parentElement;
+		localStorage.removeItem(div.innerHTML.split('<')[0]);
+		div.style.display = "none";
+	}
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.getElementById('todo_list');
+list.addEventListener('click', function(ev) {
+	if (ev.target.tagName === 'LI' && ev.target.classList.contains('checked')) {
+		localStorage.setItem(ev.target.innerHTML.split('<')[0], 0);
+		ev.target.classList.toggle('checked');
+	} else {
+		localStorage.setItem(ev.target.innerHTML.split('<')[0], 1);
+		ev.target.classList.toggle('checked');
+	}
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+	var li = document.createElement("li");
+	var inputValue = document.getElementById("todo").value;
+	var t = document.createTextNode(inputValue);
+	
+	localStorage.setItem(inputValue, 0);
+	
+	li.appendChild(t);
+	if (inputValue === '') {
+		alert("You must write something!");
+	} else {
+		document.getElementById("todo_list").appendChild(li);
+	}
+	document.getElementById("todo").value = "";
+
+	var span = document.createElement("SPAN");
+	var txt = document.createTextNode("\u00D7");
+	span.className = "close";
+	span.appendChild(txt);
+	li.appendChild(span);
+
+	for (i = 0; i < close.length; i++) {
+		close[i].onclick = function() {
+			var div = this.parentElement;
+			localStorage.removeItem(div.innerHTML.split('<')[0]);
+			div.style.display = "none";
+		}
+	}
+}
