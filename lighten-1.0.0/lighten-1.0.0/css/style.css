@@ -2447,4 +2447,14 @@ input {
   padding: 10px;
   float: left;
   font-size: 16px;
+
+table,th,td {
+	background-color: bisque;
+	border-collapse: collapse;
+	border: 1px solid #000;
+	/* text-align: center; */
+}
+
+th,td{
+	padding-left: 10px;
 }
