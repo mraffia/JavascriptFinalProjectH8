@@ -378,6 +378,10 @@ for (var i = 0; i < localStorage.length; i++) {
 	var t = document.createTextNode(inputValue);
 
 	li.appendChild(t);
+	if (localStorage.getItem(inputValue) === "1") {
+		li.classList.toggle('checked');
+	}
+
 	document.getElementById("todo_list").appendChild(li);
 }
 
@@ -406,7 +410,11 @@ for (i = 0; i < close.length; i++) {
 // Add a "checked" symbol when clicking on a list item
 var list = document.getElementById('todo_list');
 list.addEventListener('click', function(ev) {
-	if (ev.target.tagName === 'LI') {
+	if (ev.target.tagName === 'LI' && ev.target.classList.contains('checked')) {
+		localStorage.setItem(ev.target.innerHTML.split('<')[0], 0);
+		ev.target.classList.toggle('checked');
+	} else {
+		localStorage.setItem(ev.target.innerHTML.split('<')[0], 1);
 		ev.target.classList.toggle('checked');
 	}
 }, false);
