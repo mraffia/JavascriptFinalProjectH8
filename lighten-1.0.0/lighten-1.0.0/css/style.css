@@ -2447,6 +2447,7 @@ input {
   padding: 10px;
   float: left;
   font-size: 16px;
+}
 
 table,th,td {
 	background-color: bisque;
@@ -2455,6 +2456,6 @@ table,th,td {
 	/* text-align: center; */
 }
 
-th,td{
+th,td {
 	padding-left: 10px;
 }
