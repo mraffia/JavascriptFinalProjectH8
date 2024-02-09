@@ -1,5 +1,5 @@
 # Javascript Final Project
-Javascript Final Project from Kelas Bootcamp Golang + Javascript Hacktiv8.
+Javascript Final Project Kelas Bootcamp Golang + Javascript Hacktiv8.
 
 ## Project Website
 [Company Profile Live Demo](https://mraffia.github.io/odin-blog)
