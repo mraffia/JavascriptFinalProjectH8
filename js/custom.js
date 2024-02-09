@@ -374,6 +374,7 @@ $(function () {
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 for (var i = 0; i < localStorage.length; i++) {
 	var li = document.createElement("li");
+	li.classList.add("tasks");
 	var inputValue = localStorage.key(i);
 	var t = document.createTextNode(inputValue);
 
@@ -386,7 +387,7 @@ for (var i = 0; i < localStorage.length; i++) {
 }
 
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
+var myNodelist = document.getElementsByClassName("tasks");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
 	var span = document.createElement("SPAN");
@@ -410,10 +411,10 @@ for (i = 0; i < close.length; i++) {
 // Add a "checked" symbol when clicking on a list item
 var list = document.getElementById('todo_list');
 list.addEventListener('click', function(ev) {
-	if (ev.target.tagName === 'LI' && ev.target.classList.contains('checked')) {
+	if (ev.target.classList.contains('tasks') && ev.target.classList.contains('checked')) {
 		localStorage.setItem(ev.target.innerHTML.split('<')[0], 0);
 		ev.target.classList.toggle('checked');
-	} else {
+	} else if (ev.target.classList.contains('tasks') && !ev.target.classList.contains('checked')) {
 		localStorage.setItem(ev.target.innerHTML.split('<')[0], 1);
 		ev.target.classList.toggle('checked');
 	}
@@ -422,15 +423,15 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
 	var li = document.createElement("li");
+	li.classList.add("tasks");
 	var inputValue = document.getElementById("todo").value;
 	var t = document.createTextNode(inputValue);
 	
-	localStorage.setItem(inputValue, 0);
-	
 	li.appendChild(t);
-	if (inputValue === '') {
+	if (!inputValue.replace(/\s/g, '').length) {
 		alert("You must write something!");
 	} else {
+		localStorage.setItem(inputValue, 0);
 		document.getElementById("todo_list").appendChild(li);
 	}
 	document.getElementById("todo").value = "";
