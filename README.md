@@ -2,7 +2,7 @@
 Javascript Final Project Kelas Bootcamp Golang + Javascript Hacktiv8.
 
 ## Project Website
-[Company Profile Live Demo](https://mraffia.github.io/odin-blog)
+https://javascriptfinalprojecth8-mraffia.netlify.app/
 
 ## Project Description
 A basic company profile with a modal and todo list feature.
